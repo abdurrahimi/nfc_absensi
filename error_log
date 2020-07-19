@@ -1,0 +1,12 @@
+[15-May-2016 17:42:29 Asia/Jakarta] PHP Fatal error:  Cannot redeclare m_login::login_mhs_apps() in /home/kpptech/public_html/operation/ayu/newabsensi/application/models/m_login.php on line 29
+[15-May-2016 17:43:52 Asia/Jakarta] PHP Fatal error:  Cannot redeclare m_login::login_mhs_apps() in /home/kpptech/public_html/operation/ayu/newabsensi/application/models/m_login.php on line 29
+[19-Aug-2019 14:57:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/kpptech/public_html/operation/aakiky/rezha/system/database/drivers/mysql/mysql_driver.php:92
+Stack trace:
+#0 /home/kpptech/public_html/operation/aakiky/rezha/system/database/DB_driver.php(116): CI_DB_mysql_driver->db_pconnect()
+#1 /home/kpptech/public_html/operation/aakiky/rezha/system/database/DB.php(149): CI_DB_driver->initialize()
+#2 /home/kpptech/public_html/operation/aakiky/rezha/system/core/Loader.php(347): DB(Array, NULL)
+#3 /home/kpptech/public_html/operation/aakiky/rezha/system/core/Loader.php(1172): CI_Loader->database()
+#4 /home/kpptech/public_html/operation/aakiky/rezha/system/core/Loader.php(153): CI_Loader->_ci_autoloader()
+#5 /home/kpptech/public_html/operation/aakiky/rezha/system/core/Controller.php(52): CI_Loader->initialize()
+#6 /home/kpptech/public_html/operation/aakiky/rezha/application/controllers/admin/login.php(5): CI_Controller->__construct()
+#7 /home/kpptech/public_html/operation/aakiky/rezha/system/core/CodeIgniter. in /home/kpptech/public_html/operation/aakiky/rezha/system/database/drivers/mysql/mysql_driver.php on line 92
