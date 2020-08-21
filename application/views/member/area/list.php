@@ -151,7 +151,7 @@
                             <?php echo $this->session->flashdata('msgbox') ?>
                             </div>
                             <div class="table-header">
-                                Menampilkan area di PT. Ditra Nusantara
+                                Menampilkan area di SEKOLAH ALAM AL-KARIM BANDAR LAMPUNG
                             </div>
 
 							<div class="modal-footer no-margin-top"> 

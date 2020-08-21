@@ -5,8 +5,7 @@
             <script type="text/javascript">
                 try {
                     ace.settings.check('breadcrumbs', 'fixed')
-                } catch (e) {
-                }
+                } catch (e) {}
             </script>
 
             <ul class="breadcrumb">
@@ -153,62 +152,60 @@
 
                             <div class="clearfix">
 
-                            <?php echo $this->session->flashdata('msgbox') ?>
+                                <?php echo $this->session->flashdata('msgbox') ?>
                             </div>
                             <div class="table-header">
-                                Menampilkan seluruh data rule absensi PT. Ditra Nusantara
+                                Menampilkan seluruh data rule absensi SEKOLAH ALAM AL-KARIM BANDAR LAMPUNG
                             </div>
 
-                            <div class="modal-footer no-margin-top"> 
+                            <div class="modal-footer no-margin-top">
                                 <a href="<?php echo base_url('admin/rule/add/') ?>">
-                                <button type="button" class="btn btn-sm btn-success pull-left" data-dismiss="modal">
-                                    <i class="ace-icon fa fa-plus"></i>
-                                    Tambah Data
-                                </button>
-                                </a>                               
+                                    <button type="button" class="btn btn-sm btn-success pull-left" data-dismiss="modal">
+                                        <i class="ace-icon fa fa-plus"></i>
+                                        Tambah Data
+                                    </button>
+                                </a>
                             </div>
-                            
+
                             <div>
-                        <table id="dynamic-table" class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Jabatan</th>
-                                    <th>Hari</th>
-                                    <th>Tipe Aktifitas</th>
-									<th>Jam Mulai</th>
-									<th>Jam Selesai</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead> 
-                            <tbody>
-                                 <?php
-                                $no = 0 ;
-                                foreach($listData as $value){
-                                $no++;
-                                 ?>
-                                  <tr>
-                                    <td><?php echo $no ?></td>
-                                    <td><?php echo $value['nama_jabatan'] ?></td>
-                                    <td><?php echo $this->m_umum->namaHari($value['hari']) ?></td>
-                                    <td><?php echo $value['nama_aktifitas'] ?></td>
-                                    <td><?php echo $value['jam_mulai'] ?></td>
-                                    <td><?php echo $value['jam_selesai'] ?></td>
-                                    <td>
-                                    <a href="<?php echo base_url('admin/rule/edit/'.$value['id_jadwal']) ?>"><button class="btn btn-primary btn-sm btnEmptySaldo"   style="margin-left:2px"><i class="fa fa-pencil-square" style="font-size: 14px;"></i>&nbsp;&nbsp;<span>Lihat/Edit</span></button></a>
-                                    <a href="<?php echo base_url('admin/rule/doDelete/'.$value['id_jadwal']) ?>"><button class="btn btn-danger btn-sm"   style="margin-left:2px" onclick="return confirm('Anda yakin ingin menghapus siswa ini ? ')"><i class="fa fa-trash" style="font-size: 14px;"></i>&nbsp;&nbsp;<span>Hapus</span></button></a>
-                                        </td>
-                                </tr>
-                                <?php 
-                                }
-                                ?>   
-                            </tbody>
-                        </table> 
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                </div><!-- PAGE CONTENT ENDS -->
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </div><!-- /.page-content -->
-</div>
+                                <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Hari</th>
+                                            <th>Nama Aktifitas</th>
+                                            <th>Jam Mulai</th>
+                                            <th>Jam Selesai</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $no = 0;
+                                        foreach ($listData as $value) {
+                                            $no++;
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $no ?></td>
+                                                <td><?php echo $this->m_umum->namaHari($value['hari']) ?></td>
+                                                <td><?php echo $value['aktifitas'] ?></td>
+                                                <td><?php echo $value['jam_mulai'] ?></td>
+                                                <td><?php echo $value['jam_selesai'] ?></td>
+                                                <td>
+                                                    <a href="<?php echo base_url('admin/rule/edit/' . $value['id_jadwal']) ?>"><button class="btn btn-primary btn-sm btnEmptySaldo" style="margin-left:2px"><i class="fa fa-pencil-square" style="font-size: 14px;"></i>&nbsp;&nbsp;<span>Lihat/Edit</span></button></a>
+                                                    <a href="<?php echo base_url('admin/rule/doDelete/' . $value['id_jadwal']) ?>"><button class="btn btn-danger btn-sm" style="margin-left:2px" onclick="return confirm('Anda yakin ingin menghapus siswa ini ? ')"><i class="fa fa-trash" style="font-size: 14px;"></i>&nbsp;&nbsp;<span>Hapus</span></button></a>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- PAGE CONTENT ENDS -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div>
 </div><!-- /.main-content -->

@@ -5,10 +5,9 @@
             <script type="text/javascript">
                 try {
                     ace.settings.check('breadcrumbs', 'fixed')
-                } catch (e) {
-                }
+                } catch (e) {}
             </script>
- 
+
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
@@ -18,8 +17,8 @@
                 <li>
                     <a href="<?php echo base_url('admin/report/daftar') ?>">Absensi</a>
                 </li>
-                
-                
+
+
                 <li class="active">Laporan Absensi</li>
             </ul><!-- /.breadcrumb -->
 
@@ -133,7 +132,7 @@
                     Wizard laporan absensi
                     <small>
                         <i class="ace-icon fa fa-angle-double-right"></i>
-                        
+
                     </small>
                 </h1>
             </div><!-- /.page-header -->
@@ -141,48 +140,48 @@
             <div class="row">
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
-					<?php $id=$this->uri->segment(4);?>
-                    <form class="form-horizontal" method="post" target="_blank" action="<?php echo base_url().'admin/report/daftar/'.$id ?>" role="form" enctype="multipart/form-data"> 
-                       <?php 
-                       $dataOld = $this->session->flashdata('oldPost'); 
-                       echo $this->session->flashdata('msgbox');?>
+                    <?php $id = $this->uri->segment(4); ?>
+                    <form class="form-horizontal" method="post" target="_blank" action="<?php echo base_url() . 'admin/report/daftar/' . $id ?>" role="form" enctype="multipart/form-data">
+                        <?php
+                        $dataOld = $this->session->flashdata('oldPost');
+                        echo $this->session->flashdata('msgbox'); ?>
                         <!-- #section:elements.form -->
-						<div class="form-group">        
-                          <div class="col-sm-3" style="border-bottom: 2px solid #6EBACC;">
-                            Silakan isi tanggal
-                          </div>
-                        </div>
-						
-						<?php if($id == "harian"){?>
-						<div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Periode</label>
-                            <div class="col-sm-9">
-							<input type="date" name="txtTgl" value="<?= date('Y-m-d') ?>" placeholder="Tanggal" class="col-xs-10 col-sm-5" required/>
-							</div>
-						</div>
-						<?php } ?>
-						<?php if($id == "bulanan"){?>
-						<div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Periode</label>
-                            <div class="col-sm-9">
-								 <select name="spinPeriodeBulan" class="col-xs-5 col-sm-3">
-                                    <option value="1">Januari</option>
-                                    <option value="2">Februari</option>
-                                    <option value="3">Maret</option>
-                                    <option value="4">April</option>
-                                    <option value="5">Mei</option>
-                                    <option value="6">Juni</option>
-                                    <option value="7">Juli</option>
-                                    <option value="8">Agustus</option>
-                                    <option value="9">September</option>
-                                    <option value="10">Oktober</option>
-                                    <option value="11">November</option>
-                                    <option value="12">Desember</option>
-                                </select>
-                                <input type="text" name="txtTahun" value="<?php echo $dataOld['txtTahun']; ?>" placeholder="Tahun" class="col-xs-5 col-sm-2" style="height:30px;margin-left:5px;" required/>
+                        <div class="form-group">
+                            <div class="col-sm-3" style="border-bottom: 2px solid #6EBACC;">
+                                Silakan isi tanggal
                             </div>
                         </div>
-						<?php } ?>
+
+                        <?php if ($id == "harian") { ?>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Periode</label>
+                                <div class="col-sm-9">
+                                    <input type="date" name="txtTgl" value="<?= date('Y-m-d') ?>" placeholder="Tanggal" class="col-xs-10 col-sm-5" required />
+                                </div>
+                            </div>
+                        <?php } ?>
+                        <?php if ($id == "bulanan") { ?>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Periode</label>
+                                <div class="col-sm-9">
+                                    <select name="spinPeriodeBulan" class="col-xs-5 col-sm-3">
+                                        <option value="1">Januari</option>
+                                        <option value="2">Februari</option>
+                                        <option value="3">Maret</option>
+                                        <option value="4">April</option>
+                                        <option value="5">Mei</option>
+                                        <option value="6">Juni</option>
+                                        <option value="7">Juli</option>
+                                        <option value="8">Agustus</option>
+                                        <option value="9">September</option>
+                                        <option value="10">Oktober</option>
+                                        <option value="11">November</option>
+                                        <option value="12">Desember</option>
+                                    </select>
+                                    <input type="text" name="txtTahun" value="<?php echo $dataOld['txtTahun']; ?>" placeholder="Tahun" class="col-xs-5 col-sm-2" style="height:30px;margin-left:5px;" required />
+                                </div>
+                            </div>
+                        <?php } ?>
                         <div class="clearfix form-actions">
                             <div class="col-md-offset-3 col-md-9">
                                 <button class="btn btn-info" type="submit">

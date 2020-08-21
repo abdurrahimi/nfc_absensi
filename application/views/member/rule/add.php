@@ -5,10 +5,9 @@
             <script type="text/javascript">
                 try {
                     ace.settings.check('breadcrumbs', 'fixed')
-                } catch (e) {
-                }
+                } catch (e) {}
             </script>
- 
+
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
@@ -18,8 +17,8 @@
                 <li>
                     <a href="<?php echo base_url('admin/rule/daftar') ?>">Rule Absensi</a>
                 </li>
-                
-                
+
+
                 <li class="active">Tambah Rule Absensi</li>
             </ul><!-- /.breadcrumb -->
 
@@ -133,7 +132,7 @@
                     Formulir Tambah Rule Absensi
                     <small>
                         <i class="ace-icon fa fa-angle-double-right"></i>
-                        
+
                     </small>
                 </h1>
             </div><!-- /.page-header -->
@@ -141,68 +140,48 @@
             <div class="row">
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
-                    <form class="form-horizontal" method="post" action="<?php echo base_url().'admin/rule/doAdd/'?>" role="form"> 
-                       <?php 
-                       $dataOld = $this->session->flashdata('oldPost'); 
-                       echo $this->session->flashdata('msgbox');?>
+                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/rule/doAdd/' ?>" role="form">
+                        <?php
+                        $dataOld = $this->session->flashdata('oldPost');
+                        echo $this->session->flashdata('msgbox'); ?>
                         <!-- #section:elements.form -->
-						<div class="form-group">        
-                          <div class="col-sm-2" style="border-bottom: 2px solid #6EBACC;">
-                            Harap isi isian di bawah ini:
-                          </div>
-                        </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Jabatan</label>
-                            <div class="col-sm-9">
-								<select name="spinJabatan" class="col-xs-10 col-sm-5">
-									<option value="">Pilih Jabatan</option>
-									<option value="">-------------</option>
-									<?php foreach($listJabatan as $value){ ?>
-									<option value="<?php echo $value['id_jabatan']?>"><?php echo $value['nama_jabatan']?></option>
-									<?php } ?>
-								</select>
+                            <div class="col-sm-2" style="border-bottom: 2px solid #6EBACC;">
+                                Harap isi isian di bawah ini:
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Hari</label>
                             <div class="col-sm-9">
-								<select name="spinHari" class="col-xs-10 col-sm-5">
-									<option value="">Pilih Hari</option>
-									<option value="">-------------</option>
-									<option value="Monday">Senin</option>
-									<option value="Tuesday">Selasa</option>
-									<option value="Wednesday">Rabu</option>
-									<option value="Thursday">Kamis</option>
-									<option value="Friday">Jum'at</option>
-									<option value="Saturday">Sabtu</option>
-									<option value="Sunday">Minggu</option>
-								</select>
+                                <select name="spinHari" class="col-xs-10 col-sm-5">
+                                    <option value="" selected disabled>-----Pilih Hari------</option>
+                                    <option value="Monday">Senin</option>
+                                    <option value="Tuesday">Selasa</option>
+                                    <option value="Wednesday">Rabu</option>
+                                    <option value="Thursday">Kamis</option>
+                                    <option value="Friday">Jum'at</option>
+                                    <option value="Saturday">Sabtu</option>
+                                    <option value="Sunday">Minggu</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Tipe Aktifitas</label>
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Nama Aktifitas</label>
                             <div class="col-sm-9">
-								<select name="spinAktifitas" class="col-xs-10 col-sm-5">
-									<option value="">Pilih Aktifitas</option>
-									<option value="">-------------</option>
-									<?php foreach($listAktifitas as $value){ ?>
-									<option value="<?php echo $value['id_tipe_aktifitas']?>"><?php echo $value['nama_aktifitas']?></option>
-									<?php } ?>
-								</select>
+                                <input type="text" name="aktifitas" value="" class="col-xs-5 col-sm-5" placeholder="Nama Aktifitas" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Jam Mulai</label>
-
                             <div class="col-sm-3">
-                                <input type="time" id="form-field-1" name="txtJamMulai" value="<?php echo $dataOld['txtJamMulai']; ?>" class="col-xs-5 col-sm-5" required/>
+                                <input type="time" id="form-field-1" name="txtJamMulai" value="<?php echo $dataOld['txtJamMulai']; ?>" class="col-xs-5 col-sm-5" required />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Jam Selesai</label>
 
                             <div class="col-sm-3">
-                                <input type="time" id="form-field-1" name="txtJamSelesai" value="<?php echo $dataOld['txtJamSelesai']; ?>" class="col-xs-10 col-sm-5" required/>
+                                <input type="time" id="form-field-1" name="txtJamSelesai" value="<?php echo $dataOld['txtJamSelesai']; ?>" class="col-xs-10 col-sm-5" required />
                             </div>
                         </div>
                         <div class="clearfix form-actions">

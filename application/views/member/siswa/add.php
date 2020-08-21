@@ -5,10 +5,9 @@
             <script type="text/javascript">
                 try {
                     ace.settings.check('breadcrumbs', 'fixed')
-                } catch (e) {
-                }
+                } catch (e) {}
             </script>
- 
+
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
@@ -18,8 +17,8 @@
                 <li>
                     <a href="<?php echo base_url('admin/siswa/daftar') ?>">siswa</a>
                 </li>
-                
-                
+
+
                 <li class="active">Tambah siswa</li>
             </ul><!-- /.breadcrumb -->
 
@@ -133,7 +132,7 @@
                     Formulir Tambah siswa
                     <small>
                         <i class="ace-icon fa fa-angle-double-right"></i>
-                        
+
                     </small>
                 </h1>
             </div><!-- /.page-header -->
@@ -141,43 +140,49 @@
             <div class="row">
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
-                    <form class="form-horizontal" method="post" action="<?php echo base_url().'admin/siswa/doAdd/'?>" role="form"> 
-                       <?php 
-                       $dataOld = $this->session->flashdata('oldPost'); 
-                       echo $this->session->flashdata('msgbox');?>
+                    <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/siswa/doAdd/' ?>" role="form" enctype="multipart/form-data">
+                        <?php
+                        $dataOld = $this->session->flashdata('oldPost');
+                        echo $this->session->flashdata('msgbox'); ?>
                         <!-- #section:elements.form -->
-						<div class="form-group">        
-                          <div class="col-sm-2" style="border-bottom: 2px solid #6EBACC;">
-                            Harap isi isian di bawah ini:
-                          </div>
+                        <div class="form-group">
+                            <div class="col-sm-2" style="border-bottom: 2px solid #6EBACC;">
+                                Harap isi isian di bawah ini:
+                            </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">NIS</label>
 
                             <div class="col-sm-9">
-                                <input type="text" id="form-field-1" name="nis" value="" placeholder="Isi NIS" class="col-xs-10 col-sm-5" required/>
+                                <input type="text" id="form-field-1" name="nis" value="" placeholder="Isi NIS" class="col-xs-10 col-sm-5" required />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Nama siswa</label>
                             <div class="col-sm-9">
-                                <input type="text" id="form-field-1" name="txtNamasiswa" value="" placeholder="Isi nama siswa" class="col-xs-10 col-sm-5" required/>
+                                <input type="text" id="form-field-1" name="txtNamasiswa" value="" placeholder="Isi nama siswa" class="col-xs-10 col-sm-5" required />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Jenis Kelamin</label>
                             <div class="col-sm-9">
-								<select name="txtJnskel" class="col-xs-10 col-sm-5">
-									<option value="P">Perempuan</option>
-									<option value="L">Laki-laki</option>
-								</select>
+                                <select name="txtJnskel" class="col-xs-10 col-sm-5">
+                                    <option value="P">Perempuan</option>
+                                    <option value="L">Laki-laki</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Foto</label>
+                            <div class="col-sm-9">
+                                <input type="file" id="form-field-1" name="foto" class="col-xs-10 col-sm-5" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">No HP</label>
 
                             <div class="col-sm-9">
-                                <input type="text" id="form-field-1" name="txtNoHp" value="" placeholder="Isi no hp" class="col-xs-10 col-sm-5" required/>
+                                <input type="text" id="form-field-1" name="txtNoHp" value="" placeholder="Isi no hp" class="col-xs-10 col-sm-5" required />
                             </div>
                         </div>
                         <div class="clearfix form-actions">

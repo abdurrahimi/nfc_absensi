@@ -5,8 +5,7 @@
             <script type="text/javascript">
                 try {
                     ace.settings.check('breadcrumbs', 'fixed')
-                } catch (e) {
-                }
+                } catch (e) {}
             </script>
 
             <ul class="breadcrumb">
@@ -143,61 +142,67 @@
 
                             <div class="clearfix">
 
-                            <?php echo $this->session->flashdata('msgbox') ?>
+                                <?php echo $this->session->flashdata('msgbox') ?>
                             </div>
                             <div class="table-header">
-                                Menampilkan seluruh data siswa PT. Ditra Nusantara
+                                Menampilkan seluruh data siswa SEKOLAH ALAM AL-KARIM BANDAR LAMPUNG
                             </div>
 
-                            <div class="modal-footer no-margin-top"> 
+                            <div class="modal-footer no-margin-top">
                                 <a href="<?php echo base_url('admin/siswa/add/') ?>">
-                                <button type="button" class="btn btn-sm btn-success pull-left" data-dismiss="modal">
-                                    <i class="ace-icon fa fa-plus"></i>
-                                    Tambah Data
-                                </button>
-                                </a>                               
+                                    <button type="button" class="btn btn-sm btn-success pull-left" data-dismiss="modal">
+                                        <i class="ace-icon fa fa-plus"></i>
+                                        Tambah Data
+                                    </button>
+                                </a>
                             </div>
-                            
+
                             <div>
-                        <table id="dynamic-table" class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>NIS</th>
-                                    <th>Nama</th>
-                                    <th>Jenis Kelamin</th>
-									<th>No. HP</th>
-                                    <th width="20%">Aksi</th>
-                                </tr>
-                            </thead> 
-                            <tbody>
-                                 <?php
-                                $no = 0 ;
-                                foreach($listData as $value){
-                                $no++;
-                                 ?>
-                                  <tr>
-                                    <td><?php echo $no ?></td>
-                                    <td><?php echo $value['nis'] ?></td>
-                                    <td><?php echo $value['nama_lengkap'] ?></td>
-                                    <td><?php 
-									if($value['jnskel']=="P"){ echo "Perempuan"; }else{ echo "Laki-laki"; } ?></td>
-                                    <td><?php echo $value['nohp'] ?></td>
-                                    <td>
-                                    <a href="<?php echo base_url('admin/siswa/edit/'.$value['nis']) ?>"><button class="btn btn-primary btn-sm btnEmptySaldo"   style="margin-left:2px"><i class="fa fa-pencil-square" style="font-size: 14px;"></i>&nbsp;&nbsp;<span>Lihat/Edit</span></button></a>
-                                    <a href="<?php echo base_url('admin/siswa/doDelete/'.$value['nis']) ?>"><button class="btn btn-danger btn-sm"   style="margin-left:2px" onclick="return confirm('Anda yakin ingin menghapus siswa ini ? ')"><i class="fa fa-trash" style="font-size: 14px;"></i>&nbsp;&nbsp;<span>Hapus</span></button></a>
-                                        </td>
-                                </tr>
-                                <?php 
-                                }
-                                ?>   
-                            </tbody>
-                        </table> 
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                </div><!-- PAGE CONTENT ENDS -->
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </div><!-- /.page-content -->
-</div>
+                                <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Foto</th>
+                                            <th>NIS</th>
+                                            <th>Nama</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>No. HP</th>
+                                            <th width="20%">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $no = 0;
+                                        foreach ($listData as $value) {
+                                            $no++;
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $no ?></td>
+                                                <td class="text-center"><img style="width: 65px; height:80px;" src="<?= ($value['foto'] != "") ? base_url('uploads/' . $value['foto']) : "https://icon-library.com/images/default-user-icon/default-user-icon-4.jpg" ?>"></td>
+                                                <td><?php echo $value['nis'] ?></td>
+                                                <td><?php echo $value['nama_lengkap'] ?></td>
+                                                <td><?php
+                                                    if ($value['jnskel'] == "P") {
+                                                        echo "Perempuan";
+                                                    } else {
+                                                        echo "Laki-laki";
+                                                    } ?></td>
+                                                <td><?php echo $value['nohp'] ?></td>
+                                                <td>
+                                                    <a href="<?php echo base_url('admin/siswa/edit/' . $value['nis']) ?>"><button class="btn btn-primary btn-sm btnEmptySaldo" style="margin-left:2px"><i class="fa fa-pencil-square" style="font-size: 14px;"></i>&nbsp;&nbsp;<span>Lihat/Edit</span></button></a>
+                                                    <a href="<?php echo base_url('admin/siswa/doDelete/' . $value['nis']) ?>"><button class="btn btn-danger btn-sm" style="margin-left:2px" onclick="return confirm('Anda yakin ingin menghapus siswa ini ? ')"><i class="fa fa-trash" style="font-size: 14px;"></i>&nbsp;&nbsp;<span>Hapus</span></button></a>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- PAGE CONTENT ENDS -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div>
 </div><!-- /.main-content -->

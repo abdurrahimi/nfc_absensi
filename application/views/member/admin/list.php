@@ -146,7 +146,7 @@
                             <?php echo $this->session->flashdata('msgbox') ?>
                             </div>
                             <div class="table-header">
-                                Menampilkan seluruh data siswa PT. Ditra Nusantara
+                                Menampilkan seluruh data siswa SEKOLAH ALAM AL-KARIM BANDAR LAMPUNG
                             </div>
 
                             <div class="modal-footer no-margin-top"> 

@@ -154,7 +154,7 @@
                             <?php echo $this->session->flashdata('msgbox') ?>
                             </div>
                             <div class="table-header">
-                                Menampilkan seluruh jabatan di PT. Ditra Nusantara
+                                Menampilkan seluruh jabatan di SEKOLAH ALAM AL-KARIM BANDAR LAMPUNG
                             </div>
 
 							<div class="modal-footer no-margin-top"> 
